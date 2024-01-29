@@ -26,7 +26,7 @@ return licenseBadge;
 
 }
 
-// TODO: Create a function that returns the license link
+//  Created another switch statement.
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   let licenseLink = "";
@@ -54,7 +54,7 @@ return licenseLink;
 
 }
 
-// TODO: Create a function that returns the license section of README
+// Here is another Switch Statement.
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   let licenseSection = "";
@@ -84,7 +84,50 @@ return licenseLink;
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+  const licenseBadge = renderLicenseBadge(data.license);
+  const licenseLink = renderLicenseLink(data.license);
+  const licenseSection = renderLicenseSection(data.license);
   return `# ${data.title}
+
+  ${licenseBadge}
+
+  ##Description
+
+  ##Table of Contents
+
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Features](#features)
+  - [How to Contribute](#how to contribute)
+  - [Tests](#tests)
+  - [Credits](#credits)
+  - [License](#license)
+
+  ##Installation
+
+
+  ##Useage
+
+
+  ##Features
+
+
+  ##How to Contribute
+
+
+  ##Tests
+
+
+  ##Credits
+
+
+  ##License
+
+  ${licenseSection}
+
+
+  ${licenseLink}
+
 
 `;
 }
