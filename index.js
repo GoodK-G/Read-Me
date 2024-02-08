@@ -12,7 +12,7 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-fs.writeFile(fileName, JSON.stringify(data, null, 2), (err) =>
+fs.writeFile(fileName, generateMarkdown(data), (err) =>
 err ? console.log(err) : console.log('Successfully wrote the information to the file!')
 );
 }
