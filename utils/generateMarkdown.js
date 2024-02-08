@@ -2,7 +2,7 @@
 // If there is no license, return an empty string
 
 // I decided to consoldate all of the different switch functions into one.
-function renderLicense(license) {
+function generateLicense(license) {
   let licenseBadge = "";
   let licenseLink = "";
   let licenseSection = "";
@@ -38,18 +38,17 @@ function renderLicense(license) {
   }
 
   return {
-      badge: licenseBadge,
-      link: licenseLink,
-      section: licenseSection
-  };
+  licenseBadge,
+  licenseLink,
+  licenseSection}
+
+
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  const licenseBadge = renderLicenseBadge(data.license);
-  const licenseLink = renderLicenseLink(data.license);
-  const licenseSection = renderLicenseSection(data.license);
-  return `# ${data.title}
+    const{licenseBadge, licenseLink, licenseSection} = generateLicense(data.license);
+  return `#Title
 
   ${licenseBadge}
 
@@ -60,7 +59,7 @@ function generateMarkdown(data) {
   - [Installation](#installation)
   - [Usage](#usage)
   - [Features](#features)
-  - [How to Contribute](#how to contribute)
+  - [How to Contribute](#how-to-contribute)
   - [Tests](#tests)
   - [Credits](#credits)
   - [License](#license)
